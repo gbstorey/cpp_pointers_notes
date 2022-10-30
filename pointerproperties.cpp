@@ -8,6 +8,32 @@
 
 using namespace std;
 
+// ----------------- HELPER FUNCTIONS ----------------- //
+
+void double_data(int *int_ptr) {
+    *int_ptr *= 2;
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void display(const vector<string> *const v ) {
+    //(*v).at(0) = "Funny"; //compiler error, constant value
+    for (auto str: *v)
+        cout << str << " ";
+    cout << endl;
+//    v = nullptr; //compiler error, constant pointer
+}
+
+void display(int *array, int sentinel) {
+    while (*array != sentinel)
+        cout << *array++ << " ";
+    cout << endl;
+}
+
 int main()
 {
 // ----------------- BASIC PROPERTIES ----------------- //
@@ -165,7 +191,35 @@ int main()
 //
 //    cout << "In the string " << name << ", " << *char_ptr2 << " is " << (char_ptr2-char_ptr1) << " characters away from " << *char_ptr1 << endl;
 
-// ----------------- CONST AND POINTERS ----------------- //
+// ----------------- PASSING POINTERS TO A FUNCTION ----------------- //
+//    int value{10};
+//    int *int_ptr {nullptr};
+//
+//    cout << "Value: " << value << endl;
+//    double_data(&value);
+//    cout << "Value: " << value << endl;
+//
+//    cout << "--------------------" << endl;
+//    int_ptr = &value;
+//    double_data(int_ptr);
+//    cout << "Value: " << value << endl;
+
+//    int x {100}, y{200};
+//    cout << "\nx: " << x << endl;
+//    cout << "y: " << y << endl;
+//    swap(&x, &y);
+//    cout << "\nx: " << x << endl;
+//    cout << "y: " << y << endl;
+
+//    cout << "----------------------" << endl;
+//    vector<string> stooges {"Larry", "Moe", "Curly"};
+//    display(&stooges);
+
+    cout << "\n----------------------------" << endl;
+    int scores[] {100, 98, 97, 79, 85, -1};
+    display(scores, -1);
+
+
 
 
 
