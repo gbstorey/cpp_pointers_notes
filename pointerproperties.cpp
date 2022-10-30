@@ -10,32 +10,32 @@ using namespace std;
 
 // ----------------- HELPER FUNCTIONS ----------------- //
 
-void double_data(int *int_ptr) {
-    *int_ptr *= 2;
-}
+//void double_data(int *int_ptr) {
+//    *int_ptr *= 2;
+//}
+//
+//void swap(int *a, int *b) {
+//    int temp = *a;
+//    *a = *b;
+//    *b = temp;
+//}
+//
+//void display(const vector<string> *const v ) {
+//    //(*v).at(0) = "Funny"; //compiler error, constant value
+//    for (auto str: *v)
+//        cout << str << " ";
+//    cout << endl;
+////    v = nullptr; //compiler error, constant pointer
+//}
+//
+//void display(int *array, int sentinel) {
+//    while (*array != sentinel)
+//        cout << *array++ << " ";
+//    cout << endl;
+//}
 
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-void display(const vector<string> *const v ) {
-    //(*v).at(0) = "Funny"; //compiler error, constant value
-    for (auto str: *v)
-        cout << str << " ";
-    cout << endl;
-//    v = nullptr; //compiler error, constant pointer
-}
-
-void display(int *array, int sentinel) {
-    while (*array != sentinel)
-        cout << *array++ << " ";
-    cout << endl;
-}
-
-int main()
-{
+//int main()
+//{
 // ----------------- BASIC PROPERTIES ----------------- //
 
 //    int num(10);
@@ -112,6 +112,7 @@ int main()
 //    cout << endl;
 
 // ----------------- DYNAMIC MEMORY ALLOCATION ----------------- //
+
 //    int *int_ptr {nullptr};
 //    int_ptr = new int;
 //    cout << int_ptr << endl;
@@ -129,6 +130,7 @@ int main()
 //    delete [] temp_ptr;
 
 // ----------------- ARRAYS AND POINTERS, SUBSCRIPT/OFFSET EQUIVALENCY ----------------- //
+
 //    int scores[] {100, 95, 89};
 //    cout << "Value of scores: " << scores << endl;
 //
@@ -152,6 +154,7 @@ int main()
 //    cout << *(scores+2) << endl;
 
 // ----------------- POINTER ARITHMETIC ----------------- //
+
 //    int scores[] {100, 95, 89, 68, -1}; //sentinel value -1
 //    int *score_ptr {scores};
 //
@@ -192,6 +195,7 @@ int main()
 //    cout << "In the string " << name << ", " << *char_ptr2 << " is " << (char_ptr2-char_ptr1) << " characters away from " << *char_ptr1 << endl;
 
 // ----------------- PASSING POINTERS TO A FUNCTION ----------------- //
+
 //    int value{10};
 //    int *int_ptr {nullptr};
 //
@@ -215,18 +219,45 @@ int main()
 //    vector<string> stooges {"Larry", "Moe", "Curly"};
 //    display(&stooges);
 
-    cout << "\n----------------------------" << endl;
-    int scores[] {100, 98, 97, 79, 85, -1};
-    display(scores, -1);
+//    cout << "\n----------------------------" << endl;
+//    int scores[] {100, 98, 97, 79, 85, -1};
+//    display(scores, -1);
 
+// ----------------- RETURNING POINTERS FROM A FUNCTION ----------------- //
 
+//int *create_array(size_t size, int init_value = 0) {
+//    int *new_storage {nullptr};
+//    new_storage = new int[size];
+//    for (size_t i{0}; i<size; ++i)
+//        *(new_storage+i) = init_value;
+//    return new_storage;
+//}
+//
+//void display(const int *const array, size_t size) {
+//    for (size_t i{0}; i<size; ++i)
+//        cout << array[i] << " ";
+//    cout << endl;
+//}
+//
+//int main() {
+//    int *my_array {nullptr};
+//    size_t size;
+//    int init_value {};
+//    cout << "\n How many integers would you like to allocate? ";
+//    cin >> size;
+//    cout << "What value would you like them initialized to? ";
+//    cin >> init_value;
+//    my_array = create_array(size, init_value);
+//    cout << "\n-------------------------------" << endl;
+//    display(my_array, size);
+//    delete [] my_array;
+//    cout << endl;
+//    return 0;
+//}
 
-
-
-
+int main() {
 
     cout << endl;
-
     return 0;
 }
 
