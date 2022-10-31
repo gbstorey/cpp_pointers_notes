@@ -290,5 +290,39 @@ using namespace std;
 //    return 0;
 //}
 
+// ----------------- SECTION CHALLENGE ----------------- //
 
+int *apply_all(const int *const array1, size_t size1, const int *const array2, size_t size2) {
+    int *new_array {nullptr};
+    new_array = new int[size1*size2];
+    int position {0};
+    for (size_t i{0}; i < size1; ++i) {
+        for (size_t j{0}; j < size2; ++j) {
+            new_array[position] = array1[i] * array2[j];
+            ++position;
+        }
+    }
+    return new_array;
+}
+
+void display(const int *const array, size_t size) {
+    for (size_t i{0}; i<size; ++i)
+        cout << array[i] << " ";
+    cout << endl;
+}
+
+int main() {
+    int array1[] {1,2,3,4,5};
+    int array2[] {10,20,30};
+    cout << "Output" << endl;
+    cout << "\n----------------------------------" << endl;
+    cout << "Array 1: ";
+    display(array1, 5);
+    cout << "Array 2: ";
+    display(array2, 3);
+    int *results = apply_all(array1, 5, array2, 3);
+    cout << "Results: ";
+    display(results, 5*3);
+    return 0;
+}
 #pragma clang diagnostic pop
